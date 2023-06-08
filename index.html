@@ -21,27 +21,20 @@
           </div>
           <div class="icon">
             <i class="fa-solid fa-cart-shopping"></i>
-            <span>0</span>
+            <span class="number-item">0</span>
           </div>
         </div>
       </section>
       <section class="category">
         <div class="container">
           <div class="select">
-            <select name="" id="">
-              <option>All</option>
-              <option>Coffe</option>
-              <option>Pillow</option>
-              <option>Phone</option>
-              <option>Anime</option>
-              <option>Watch</option>
-              <option>Keyboand</option>
-              <option>Mouse</option>
-              <option>LIGma</option>
+            <label for="select"></label>
+            <select name="" id="select">
+              All
             </select>
           </div>
           <div class="input">
-            <input type="text" placeholder="find item" />
+            <input class="search-product" type="text" placeholder="find item" />
           </div>
         </div>
       </section>
@@ -52,9 +45,29 @@
               <div class="img">
                 <img src="./img/img (1).png" alt="" />
               </div>
-              <div class="info">
+              <div class="content">
                 <h1 class="name">meth</h1>
-                <p class="price">100$</p>
+                <div class="info">
+                  <p class="price">100$</p>
+                  <div class="category">stuff</div>
+                </div>
+
+                <p class="desc">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Aperiam nemo ut tenetur eius, saepe qui corporis, ab adipisci,
+                  natus alias sunt. Iusto, sapiente cupiditate odit blanditiis
+                  quas ea soluta repudiandae.
+                </p>
+                <div class="rating">
+                  <div class="count">
+                    <span>user</span>
+                    <i class="fa-solid fa-user"></i>
+                  </div>
+                  <div class="rate">
+                    <span>5</span>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
               </div>
               <div class="btn">
                 <button class="add">Add to cart</button>
@@ -95,14 +108,15 @@
               </div>
             </li> -->
           </ul>
-          <p class="total-price">Total: <span>10$</span></p>
+          <p class="total-price"></p>
           <a class="checkout-btn" href="#">checkout</a>
         </div>
       </section>
     </div>
 
     <!-- java -->
-    <script src="./data.js"></script>
-    <script src="./app.js"></script>
+    <script src="./app2.js"></script>
+    <!-- <script src="./app.js"></script> -->
+    <!-- <script src="./data.js"></script> -->
   </body>
 </html>

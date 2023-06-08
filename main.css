@@ -63,6 +63,11 @@ body {
 }
 .wrapper .header {
   background-color: #025464;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
 }
 .wrapper .header .container {
   display: flex;
@@ -114,26 +119,39 @@ body {
 }
 .wrapper .header .container .icon span {
   font-size: 16px;
-  padding: 6px 8px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #f8f1f1;
   border-radius: 50%;
   color: #025464;
   font-weight: 600;
 }
 .wrapper .category {
-  margin-top: 60px;
+  margin-top: 160px;
 }
 .wrapper .category .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.wrapper .category .container .select {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .wrapper .category .container .select select {
-  outline: none;
+  padding: 10px;
   border-radius: 50px;
+  border: 1px solid #000;
   background-color: white;
-  padding: 8px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  text-transform: capitalize;
+}
+.wrapper .category .container .select option {
+  text-transform: capitalize;
 }
 .wrapper .category .container .input input {
   border: none;
@@ -150,45 +168,81 @@ body {
 }
 .wrapper .product .container .list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 .wrapper .product .container .list .item {
   padding: 15px 10px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 280px;
 }
 .wrapper .product .container .list .item .img {
   overflow: hidden;
+  border-radius: 12px;
+  height: 200px;
+  width: 200px;
+  margin: 0 auto;
 }
 .wrapper .product .container .list .item .img img {
   border-radius: 12px;
-  overflow: hidden;
-  width: 300px;
-  height: 200px;
+  width: 200px;
   object-fit: cover;
-  margin: 0 auto;
 }
 .wrapper .product .container .list .item .img img:hover {
   transform: scale(1.05);
 }
-.wrapper .product .container .list .item .info {
+.wrapper .product .container .list .item .content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.wrapper .product .container .list .item .content .name {
+  font-size: 20px;
+  color: #025464;
+  font-weight: 500;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+}
+.wrapper .product .container .list .item .content .info {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
-  padding: 0 10px;
-  margin-bottom: 30px;
-  height: 50px;
 }
-.wrapper .product .container .list .item .info .name {
-  font-size: 20px;
+.wrapper .product .container .list .item .content .info .price {
+  font-size: 24px;
+  font-weight: 500;
+}
+.wrapper .product .container .list .item .content .info .category {
+  padding: 10px;
+  background-color: rgba(2, 84, 100, 0.7);
+  border-radius: 5px;
+  margin: auto 0;
+  color: white;
+}
+.wrapper .product .container .list .item .content .desc {
+  font-size: 14px;
+  line-height: 1.4;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+}
+.wrapper .product .container .list .item .content .rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.wrapper .product .container .list .item .content .rating .rate,
+.wrapper .product .container .list .item .content .rating .count {
   color: #025464;
-  font-weight: 600;
-}
-.wrapper .product .container .list .item .info .price {
-  font-size: 20px;
 }
 .wrapper .product .container .list .item .btn .add {
   width: 100%;
@@ -243,14 +297,14 @@ body {
   justify-content: end;
   align-items: center;
   margin-top: 40px;
-  gap: 60px;
+  gap: 28px;
   border-bottom: 1px solid #000;
   padding: 10px 0;
   font-weight: 600;
   color: rgba(81, 80, 80, 0.8588235294);
 }
 .wrapper .modal .modal-container .info .item {
-  padding: 0 27px;
+  padding: 0 60px;
 }
 .wrapper .modal .modal-container .box-list {
   display: flex;
@@ -270,6 +324,9 @@ body {
   padding: 0 20px;
   font-size: 20px;
 }
+.wrapper .modal .modal-container .box-list .box-item .modal-cart .name {
+  width: 200px;
+}
 .wrapper .modal .modal-container .box-list .box-item .modal-cart .img img {
   width: 200px;
   height: 150px;
@@ -285,8 +342,9 @@ body {
 .wrapper .modal .modal-container .total-price {
   display: flex;
   justify-content: end;
-  margin-top: 40px;
+  padding-top: 40px;
   font-size: 20px;
+  border-top: 1px solid #000;
 }
 .wrapper .modal .modal-container .total-price span {
   padding: 0 10px;
